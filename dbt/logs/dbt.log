@@ -1,0 +1,1497 @@
+[0m22:08:16.936855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106bbcc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120a6fc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120a6fed0>]}
+
+
+============================== 22:08:16.940390 | 1e521345-d7e0-4310-b8ed-7535187ef8b9 ==============================
+[0m22:08:16.940390 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:08:16.940763 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'log_cache_events': 'False', 'static_parser': 'True', 'empty': 'None', 'debug': 'False', 'target_path': 'None', 'version_check': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'cache_selected_only': 'False', 'profiles_dir': '/Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/.dbt', 'indirect_selection': 'eager', 'introspect': 'True', 'log_path': '/Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/dbt/logs', 'use_colors': 'True', 'log_format': 'default', 'write_json': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt debug'}
+[0m22:08:16.954677 [info ] [MainThread]: dbt version: 1.10.11
+[0m22:08:16.954975 [info ] [MainThread]: python version: 3.13.7
+[0m22:08:16.955150 [info ] [MainThread]: python path: /opt/anaconda3/envs/virtual_env/bin/python3.13
+[0m22:08:16.955305 [info ] [MainThread]: os info: macOS-26.0-arm64-arm-64bit-Mach-O
+[0m22:08:16.955473 [info ] [MainThread]: Using profiles dir at /Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/.dbt
+[0m22:08:16.955618 [info ] [MainThread]: Using profiles.yml file at /Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/.dbt/profiles.yml
+[0m22:08:16.955763 [info ] [MainThread]: Using dbt_project.yml file at /Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/dbt/dbt_project.yml
+[0m22:08:17.032680 [info ] [MainThread]: Configuration:
+[0m22:08:17.033020 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m22:08:17.033198 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:08:17.033351 [info ] [MainThread]: Required dependencies:
+[0m22:08:17.033847 [debug] [MainThread]: Executing "git --help"
+[0m22:08:17.058577 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:08:17.059206 [debug] [MainThread]: STDERR: "b''"
+[0m22:08:17.059409 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:08:17.059605 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m22:08:17.059927 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:08:17.060162 [info ] [MainThread]: dbt looked for a profiles.yml file in /Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/.dbt/profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m22:08:17.062491 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.17627291, "process_in_blocks": "0", "process_kernel_time": 0.131056, "process_mem_max_rss": "117489664", "process_out_blocks": "0", "process_user_time": 0.867787}
+[0m22:08:17.062846 [debug] [MainThread]: Command `dbt debug` failed at 22:08:17.062787 after 0.18 seconds
+[0m22:08:17.063168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10716d940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120c42b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120c69370>]}
+[0m22:08:17.063431 [debug] [MainThread]: Flushing usage events
+[0m22:08:17.426785 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:10:06.739038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105874c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d73c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d73ed0>]}
+
+
+============================== 22:10:06.743187 | a7798df8-85b9-4082-b236-74564fa5a4bb ==============================
+[0m22:10:06.743187 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:10:06.743651 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'quiet': 'False', 'invocation_command': 'dbt debug --project-dir . --profiles-dir .', 'static_parser': 'True', 'fail_fast': 'False', 'printer_width': '80', 'partial_parse': 'True', 'profiles_dir': '.', 'use_colors': 'True', 'log_format': 'default', 'version_check': 'True', 'empty': 'None', 'use_experimental_parser': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'write_json': 'True', 'introspect': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_cache_events': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m22:10:06.759106 [info ] [MainThread]: dbt version: 1.10.11
+[0m22:10:06.759414 [info ] [MainThread]: python version: 3.13.7
+[0m22:10:06.759589 [info ] [MainThread]: python path: /opt/anaconda3/envs/virtual_env/bin/python3.13
+[0m22:10:06.759801 [info ] [MainThread]: os info: macOS-26.0-arm64-arm-64bit-Mach-O
+[0m22:10:06.843497 [info ] [MainThread]: Using profiles dir at .
+[0m22:10:06.843998 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m22:10:06.844212 [info ] [MainThread]: Using dbt_project.yml file at ./dbt_project.yml
+[0m22:10:06.845764 [info ] [MainThread]: adapter type: duckdb
+[0m22:10:06.846018 [info ] [MainThread]: adapter version: 1.9.6
+[0m22:10:06.918814 [info ] [MainThread]: Configuration:
+[0m22:10:06.919166 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:10:06.919358 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:10:06.919556 [info ] [MainThread]: Required dependencies:
+[0m22:10:06.919819 [debug] [MainThread]: Executing "git --help"
+[0m22:10:06.940427 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:10:06.941302 [debug] [MainThread]: STDERR: "b''"
+[0m22:10:06.941535 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:10:06.941728 [info ] [MainThread]: Connection:
+[0m22:10:06.941912 [info ] [MainThread]:   database: nyc_taxi
+[0m22:10:06.942051 [info ] [MainThread]:   schema: main
+[0m22:10:06.942189 [info ] [MainThread]:   path: ../data/nyc_taxi.duckdb
+[0m22:10:06.942328 [info ] [MainThread]:   config_options: None
+[0m22:10:06.942459 [info ] [MainThread]:   extensions: None
+[0m22:10:06.942595 [info ] [MainThread]:   settings: {}
+[0m22:10:06.942729 [info ] [MainThread]:   external_root: .
+[0m22:10:06.942858 [info ] [MainThread]:   use_credential_provider: None
+[0m22:10:06.942991 [info ] [MainThread]:   attach: None
+[0m22:10:06.943117 [info ] [MainThread]:   filesystems: None
+[0m22:10:06.943247 [info ] [MainThread]:   remote: None
+[0m22:10:06.943375 [info ] [MainThread]:   plugins: None
+[0m22:10:06.943508 [info ] [MainThread]:   disable_transactions: False
+[0m22:10:06.943858 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:10:06.988322 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m22:10:07.015273 [debug] [MainThread]: Using duckdb connection "debug"
+[0m22:10:07.015744 [debug] [MainThread]: On debug: select 1 as id
+[0m22:10:07.016123 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:10:07.116096 [debug] [MainThread]: SQL status: OK in 0.100 seconds
+[0m22:10:07.116777 [debug] [MainThread]: On debug: Close
+[0m22:10:07.116989 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:10:07.117178 [info ] [MainThread]: [32mAll checks passed![0m
+[0m22:10:07.118942 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.4306767, "process_in_blocks": "0", "process_kernel_time": 0.17229, "process_mem_max_rss": "146554880", "process_out_blocks": "0", "process_user_time": 0.945942}
+[0m22:10:07.119221 [debug] [MainThread]: Command `dbt debug` succeeded at 22:10:07.119166 after 0.43 seconds
+[0m22:10:07.119401 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m22:10:07.119595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107173a80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071f2c30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106fe7ac0>]}
+[0m22:10:07.119821 [debug] [MainThread]: Flushing usage events
+[0m22:10:07.643149 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:11:12.315734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104364c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10606fc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10606fed0>]}
+
+
+============================== 22:11:12.319014 | c27684e4-ac8c-4857-ac85-fbd29ce7add9 ==============================
+[0m22:11:12.319014 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:11:12.319371 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'printer_width': '80', 'static_parser': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --project-dir . --profiles-dir .', 'log_path': 'logs', 'use_experimental_parser': 'False', 'target_path': 'None', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'profiles_dir': '.', 'quiet': 'False', 'cache_selected_only': 'False', 'empty': 'False', 'introspect': 'True', 'version_check': 'True', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'write_json': 'True', 'no_print': 'None', 'log_cache_events': 'False'}
+[0m22:11:12.478645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046f8510>]}
+[0m22:11:12.523962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061fbce0>]}
+[0m22:11:12.525597 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:11:12.573967 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m22:11:12.574489 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:11:12.574708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106172750>]}
+[0m22:11:13.257804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069ac230>]}
+[0m22:11:13.294860 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:11:13.296407 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:11:13.308595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d5c830>]}
+[0m22:11:13.308883 [info ] [MainThread]: Found 2 models, 3 sources, 431 macros
+[0m22:11:13.309078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a1ed00>]}
+[0m22:11:13.310016 [info ] [MainThread]: 
+[0m22:11:13.310211 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:11:13.310365 [info ] [MainThread]: 
+[0m22:11:13.310634 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:11:13.313382 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_nyc_taxi'
+[0m22:11:13.346253 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi"
+[0m22:11:13.346544 [debug] [ThreadPool]: On list_nyc_taxi: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"nyc_taxi"'
+    
+  
+  
+[0m22:11:13.346707 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:11:13.367833 [debug] [ThreadPool]: SQL status: OK in 0.021 seconds
+[0m22:11:13.369576 [debug] [ThreadPool]: On list_nyc_taxi: Close
+[0m22:11:13.369984 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc_taxi, now create_nyc_taxi_main)
+[0m22:11:13.370239 [debug] [ThreadPool]: Creating schema "database: "nyc_taxi"
+schema: "main"
+"
+[0m22:11:13.374060 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:11:13.374305 [debug] [ThreadPool]: On create_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "create_nyc_taxi_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='nyc_taxi'
+        and type='sqlite'
+    
+  
+[0m22:11:13.374478 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:11:13.375366 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:11:13.376301 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:11:13.376498 [debug] [ThreadPool]: On create_nyc_taxi_main: BEGIN
+[0m22:11:13.376787 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:11:13.376947 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:11:13.377286 [debug] [ThreadPool]: On create_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "create_nyc_taxi_main"} */
+
+    
+    
+        create schema if not exists "nyc_taxi"."main"
+    
+[0m22:11:13.378793 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:11:13.381236 [debug] [ThreadPool]: On create_nyc_taxi_main: COMMIT
+[0m22:11:13.381434 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:11:13.381590 [debug] [ThreadPool]: On create_nyc_taxi_main: COMMIT
+[0m22:11:13.381857 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:11:13.382016 [debug] [ThreadPool]: On create_nyc_taxi_main: Close
+[0m22:11:13.382680 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_nyc_taxi_main, now list_nyc_taxi_main)
+[0m22:11:13.385795 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:11:13.385989 [debug] [ThreadPool]: On list_nyc_taxi_main: BEGIN
+[0m22:11:13.386138 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:11:13.386410 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:11:13.386550 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:11:13.386708 [debug] [ThreadPool]: On list_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi_main"} */
+select
+      'nyc_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'nyc_taxi'
+  
+[0m22:11:13.397649 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m22:11:13.398892 [debug] [ThreadPool]: On list_nyc_taxi_main: ROLLBACK
+[0m22:11:13.399749 [debug] [ThreadPool]: Failed to rollback 'list_nyc_taxi_main'
+[0m22:11:13.399910 [debug] [ThreadPool]: On list_nyc_taxi_main: Close
+[0m22:11:13.400708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cc7710>]}
+[0m22:11:13.400999 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:11:13.401167 [debug] [MainThread]: On master: BEGIN
+[0m22:11:13.401312 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:11:13.401632 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:11:13.401791 [debug] [MainThread]: On master: COMMIT
+[0m22:11:13.401939 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:11:13.402076 [debug] [MainThread]: On master: COMMIT
+[0m22:11:13.402305 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:11:13.402463 [debug] [MainThread]: On master: Close
+[0m22:11:13.404423 [debug] [Thread-2 (]: Began running node model.taxi_co2.stg_yellow_trips
+[0m22:11:13.404924 [debug] [Thread-1 (]: Began running node model.taxi_co2.stg_green_trips
+[0m22:11:13.404747 [info ] [Thread-2 (]: 2 of 2 START sql table model main.stg_yellow_trips ............................. [RUN]
+[0m22:11:13.405466 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.taxi_co2.stg_yellow_trips'
+[0m22:11:13.405230 [info ] [Thread-1 (]: 1 of 2 START sql table model main.stg_green_trips .............................. [RUN]
+[0m22:11:13.405713 [debug] [Thread-2 (]: Began compiling node model.taxi_co2.stg_yellow_trips
+[0m22:11:13.405914 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc_taxi_main, now model.taxi_co2.stg_green_trips)
+[0m22:11:13.410287 [debug] [Thread-2 (]: Writing injected SQL for node "model.taxi_co2.stg_yellow_trips"
+[0m22:11:13.410541 [debug] [Thread-1 (]: Began compiling node model.taxi_co2.stg_green_trips
+[0m22:11:13.412354 [debug] [Thread-1 (]: Writing injected SQL for node "model.taxi_co2.stg_green_trips"
+[0m22:11:13.413094 [debug] [Thread-1 (]: Began executing node model.taxi_co2.stg_green_trips
+[0m22:11:13.413340 [debug] [Thread-2 (]: Began executing node model.taxi_co2.stg_yellow_trips
+[0m22:11:13.436879 [debug] [Thread-1 (]: Writing runtime sql for node "model.taxi_co2.stg_green_trips"
+[0m22:11:13.439014 [debug] [Thread-2 (]: Writing runtime sql for node "model.taxi_co2.stg_yellow_trips"
+[0m22:11:13.440014 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:11:13.440282 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: BEGIN
+[0m22:11:13.440478 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:11:13.440869 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:11:13.441094 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: BEGIN
+[0m22:11:13.441283 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:11:13.441607 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:11:13.441861 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m22:11:13.442093 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:11:13.442308 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:11:13.442559 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_green_trips__dbt_tmp"
+  
+    as (
+      WITH base AS (
+    SELECT
+        pickup_datetime,
+        dropoff_datetime,
+        passenger_count,
+        trip_distance,
+        pu_location_id,
+        do_location_id,
+        total_amount
+    FROM "nyc_taxi"."core"."green_clean"
+    WHERE pickup_datetime >= TIMESTAMP '2015-01-01'
+      AND pickup_datetime <  TIMESTAMP '2025-01-01'
+),
+emiss AS (
+    SELECT co2_grams_per_mile
+    FROM "nyc_taxi"."core"."vehicle_emissions"
+    WHERE lower(vehicle_type) IN ('green', 'green_taxi')
+    LIMIT 1
+)
+SELECT
+    b.*,
+    date_diff('second', b.pickup_datetime, b.dropoff_datetime) AS duration_sec,
+    ROUND((b.trip_distance * e.co2_grams_per_mile) / 1000.0, 6) AS trip_co2_kgs,
+    CASE
+        WHEN date_diff('second', b.pickup_datetime, b.dropoff_datetime) > 0
+            THEN b.trip_distance / (date_diff('second', b.pickup_datetime, b.dropoff_datetime) / 3600.0)
+        ELSE NULL
+    END AS avg_mph,
+    date_part('hour', b.pickup_datetime)::INT  AS hour_of_day,
+    dayofweek(b.pickup_datetime)::INT          AS day_of_week,
+    date_part('week', b.pickup_datetime)::INT  AS week_of_year,
+    month(b.pickup_datetime)::INT              AS month_of_year
+FROM base b
+CROSS JOIN emiss e;
+    );
+  
+  
+[0m22:11:13.442838 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_yellow_trips__dbt_tmp"
+  
+    as (
+      WITH base AS (
+    SELECT
+        pickup_datetime,
+        dropoff_datetime,
+        passenger_count,
+        trip_distance,
+        pu_location_id,
+        do_location_id,
+        total_amount
+    FROM "nyc_taxi"."core"."yellow_clean"
+    WHERE pickup_datetime >= TIMESTAMP '2015-01-01'
+      AND pickup_datetime <  TIMESTAMP '2025-01-01'
+),
+emiss AS (
+    SELECT co2_grams_per_mile
+    FROM "nyc_taxi"."core"."vehicle_emissions"
+    WHERE lower(vehicle_type) IN ('yellow', 'yellow_taxi')
+    LIMIT 1
+)
+SELECT
+    b.*,
+    date_diff('second', b.pickup_datetime, b.dropoff_datetime) AS duration_sec,
+    ROUND((b.trip_distance * e.co2_grams_per_mile) / 1000.0, 6) AS trip_co2_kgs,
+    CASE
+        WHEN date_diff('second', b.pickup_datetime, b.dropoff_datetime) > 0
+            THEN b.trip_distance / (date_diff('second', b.pickup_datetime, b.dropoff_datetime) / 3600.0)
+        ELSE NULL
+    END AS avg_mph,
+    date_part('hour', b.pickup_datetime)::INT  AS hour_of_day,
+    dayofweek(b.pickup_datetime)::INT          AS day_of_week,
+    date_part('week', b.pickup_datetime)::INT  AS week_of_year,
+    month(b.pickup_datetime)::INT              AS month_of_year
+FROM base b
+CROSS JOIN emiss e;
+    );
+  
+  
+[0m22:11:13.447389 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_green_trips__dbt_tmp"
+  
+    as (
+      WITH base AS (
+    SELECT
+        pickup_datetime,
+        dropoff_datetime,
+        passenger_count,
+        trip_distance,
+        pu_location_id,
+        do_location_id,
+        total_amount
+    FROM "nyc_taxi"."core"."green_clean"
+    WHERE pickup_datetime >= TIMESTAMP '2015-01-01'
+      AND pickup_datetime <  TIMESTAMP '2025-01-01'
+),
+emiss AS (
+    SELECT co2_grams_per_mile
+    FROM "nyc_taxi"."core"."vehicle_emissions"
+    WHERE lower(vehicle_type) IN ('green', 'green_taxi')
+    LIMIT 1
+)
+SELECT
+    b.*,
+    date_diff('second', b.pickup_datetime, b.dropoff_datetime) AS duration_sec,
+    ROUND((b.trip_distance * e.co2_grams_per_mile) / 1000.0, 6) AS trip_co2_kgs,
+    CASE
+        WHEN date_diff('second', b.pickup_datetime, b.dropoff_datetime) > 0
+            THEN b.trip_distance / (date_diff('second', b.pickup_datetime, b.dropoff_datetime) / 3600.0)
+        ELSE NULL
+    END AS avg_mph,
+    date_part('hour', b.pickup_datetime)::INT  AS hour_of_day,
+    dayofweek(b.pickup_datetime)::INT          AS day_of_week,
+    date_part('week', b.pickup_datetime)::INT  AS week_of_year,
+    month(b.pickup_datetime)::INT              AS month_of_year
+FROM base b
+CROSS JOIN emiss e;
+    );
+  
+  
+[0m22:11:13.447976 [debug] [Thread-2 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_yellow_trips__dbt_tmp"
+  
+    as (
+      WITH base AS (
+    SELECT
+        pickup_datetime,
+        dropoff_datetime,
+        passenger_count,
+        trip_distance,
+        pu_location_id,
+        do_location_id,
+        total_amount
+    FROM "nyc_taxi"."core"."yellow_clean"
+    WHERE pickup_datetime >= TIMESTAMP '2015-01-01'
+      AND pickup_datetime <  TIMESTAMP '2025-01-01'
+),
+emiss AS (
+    SELECT co2_grams_per_mile
+    FROM "nyc_taxi"."core"."vehicle_emissions"
+    WHERE lower(vehicle_type) IN ('yellow', 'yellow_taxi')
+    LIMIT 1
+)
+SELECT
+    b.*,
+    date_diff('second', b.pickup_datetime, b.dropoff_datetime) AS duration_sec,
+    ROUND((b.trip_distance * e.co2_grams_per_mile) / 1000.0, 6) AS trip_co2_kgs,
+    CASE
+        WHEN date_diff('second', b.pickup_datetime, b.dropoff_datetime) > 0
+            THEN b.trip_distance / (date_diff('second', b.pickup_datetime, b.dropoff_datetime) / 3600.0)
+        ELSE NULL
+    END AS avg_mph,
+    date_part('hour', b.pickup_datetime)::INT  AS hour_of_day,
+    dayofweek(b.pickup_datetime)::INT          AS day_of_week,
+    date_part('week', b.pickup_datetime)::INT  AS week_of_year,
+    month(b.pickup_datetime)::INT              AS month_of_year
+FROM base b
+CROSS JOIN emiss e;
+    );
+  
+  
+[0m22:11:13.448227 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:11:13.448429 [debug] [Thread-2 (]: DuckDB adapter: Rolling back transaction.
+[0m22:11:13.448739 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: ROLLBACK
+[0m22:11:13.449060 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: ROLLBACK
+[0m22:11:13.457099 [debug] [Thread-1 (]: Failed to rollback 'model.taxi_co2.stg_green_trips'
+[0m22:11:13.457416 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: Close
+[0m22:11:13.459757 [debug] [Thread-2 (]: Failed to rollback 'model.taxi_co2.stg_yellow_trips'
+[0m22:11:13.460021 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: Close
+[0m22:11:13.461734 [debug] [Thread-1 (]: Runtime Error in model stg_green_trips (models/staging/stg_green_trips.sql)
+  Parser Error: syntax error at or near ";"
+[0m22:11:13.464890 [debug] [Thread-2 (]: Runtime Error in model stg_yellow_trips (models/staging/stg_yellow_trips.sql)
+  Parser Error: syntax error at or near ";"
+[0m22:11:13.465376 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d0f960>]}
+[0m22:11:13.465592 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c27684e4-ac8c-4857-ac85-fbd29ce7add9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104661bd0>]}
+[0m22:11:13.465977 [error] [Thread-1 (]: 1 of 2 ERROR creating sql table model main.stg_green_trips ..................... [[31mERROR[0m in 0.06s]
+[0m22:11:13.466663 [debug] [Thread-1 (]: Finished running node model.taxi_co2.stg_green_trips
+[0m22:11:13.466386 [error] [Thread-2 (]: 2 of 2 ERROR creating sql table model main.stg_yellow_trips .................... [[31mERROR[0m in 0.06s]
+[0m22:11:13.467109 [debug] [Thread-7 (]: Marking all children of 'model.taxi_co2.stg_green_trips' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_green_trips (models/staging/stg_green_trips.sql)
+  Parser Error: syntax error at or near ";".
+[0m22:11:13.467394 [debug] [Thread-2 (]: Finished running node model.taxi_co2.stg_yellow_trips
+[0m22:11:13.468280 [debug] [Thread-7 (]: Marking all children of 'model.taxi_co2.stg_yellow_trips' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_yellow_trips (models/staging/stg_yellow_trips.sql)
+  Parser Error: syntax error at or near ";".
+[0m22:11:13.469027 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:11:13.469232 [debug] [MainThread]: On master: BEGIN
+[0m22:11:13.469380 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:11:13.469758 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:11:13.469913 [debug] [MainThread]: On master: COMMIT
+[0m22:11:13.470059 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:11:13.470195 [debug] [MainThread]: On master: COMMIT
+[0m22:11:13.470475 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:11:13.470681 [debug] [MainThread]: On master: Close
+[0m22:11:13.470901 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:11:13.471104 [debug] [MainThread]: Connection 'model.taxi_co2.stg_green_trips' was properly closed.
+[0m22:11:13.471339 [debug] [MainThread]: Connection 'model.taxi_co2.stg_yellow_trips' was properly closed.
+[0m22:11:13.471568 [info ] [MainThread]: 
+[0m22:11:13.471815 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 0.16 seconds (0.16s).
+[0m22:11:13.472278 [debug] [MainThread]: Command end result
+[0m22:11:13.484677 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:11:13.485906 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:11:13.489639 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m22:11:13.489880 [info ] [MainThread]: 
+[0m22:11:13.490096 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m22:11:13.490276 [info ] [MainThread]: 
+[0m22:11:13.490494 [error] [MainThread]: [31mFailure in model stg_green_trips (models/staging/stg_green_trips.sql)[0m
+[0m22:11:13.490694 [error] [MainThread]:   Runtime Error in model stg_green_trips (models/staging/stg_green_trips.sql)
+  Parser Error: syntax error at or near ";"
+[0m22:11:13.490843 [info ] [MainThread]: 
+[0m22:11:13.491026 [info ] [MainThread]:   compiled code at target/compiled/taxi_co2/models/staging/stg_green_trips.sql
+[0m22:11:13.491179 [info ] [MainThread]: 
+[0m22:11:13.491363 [error] [MainThread]: [31mFailure in model stg_yellow_trips (models/staging/stg_yellow_trips.sql)[0m
+[0m22:11:13.491546 [error] [MainThread]:   Runtime Error in model stg_yellow_trips (models/staging/stg_yellow_trips.sql)
+  Parser Error: syntax error at or near ";"
+[0m22:11:13.491689 [info ] [MainThread]: 
+[0m22:11:13.491864 [info ] [MainThread]:   compiled code at target/compiled/taxi_co2/models/staging/stg_yellow_trips.sql
+[0m22:11:13.492006 [info ] [MainThread]: 
+[0m22:11:13.492178 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=2
+[0m22:11:13.494270 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.2272418, "process_in_blocks": "0", "process_kernel_time": 0.186094, "process_mem_max_rss": "164298752", "process_out_blocks": "0", "process_user_time": 1.813236}
+[0m22:11:13.494568 [debug] [MainThread]: Command `dbt run` failed at 22:11:13.494514 after 1.23 seconds
+[0m22:11:13.494797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c9c9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b6add0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061088a0>]}
+[0m22:11:13.495015 [debug] [MainThread]: Flushing usage events
+[0m22:11:13.662478 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:13:23.681969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108374c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109973c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109973ed0>]}
+
+
+============================== 22:13:23.685146 | 5e062c39-3ce5-4e26-81e8-507a436849e0 ==============================
+[0m22:13:23.685146 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:13:23.685495 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt debug --project-dir . --profiles-dir .', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'log_path': 'logs', 'version_check': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '.', 'printer_width': '80', 'warn_error': 'None', 'cache_selected_only': 'False', 'debug': 'False', 'partial_parse': 'True', 'empty': 'None', 'target_path': 'None', 'write_json': 'True', 'no_print': 'None', 'log_format': 'default', 'fail_fast': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'static_parser': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m22:13:23.697535 [info ] [MainThread]: dbt version: 1.10.11
+[0m22:13:23.697846 [info ] [MainThread]: python version: 3.13.7
+[0m22:13:23.698099 [info ] [MainThread]: python path: /opt/anaconda3/envs/virtual_env/bin/python3.13
+[0m22:13:23.698378 [info ] [MainThread]: os info: macOS-26.0-arm64-arm-64bit-Mach-O
+[0m22:13:23.780550 [info ] [MainThread]: Using profiles dir at .
+[0m22:13:23.780854 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m22:13:23.781018 [info ] [MainThread]: Using dbt_project.yml file at ./dbt_project.yml
+[0m22:13:23.782150 [info ] [MainThread]: adapter type: duckdb
+[0m22:13:23.782334 [info ] [MainThread]: adapter version: 1.9.6
+[0m22:13:23.855700 [info ] [MainThread]: Configuration:
+[0m22:13:23.856037 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:13:23.856203 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:13:23.856357 [info ] [MainThread]: Required dependencies:
+[0m22:13:23.856590 [debug] [MainThread]: Executing "git --help"
+[0m22:13:23.876375 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:13:23.877072 [debug] [MainThread]: STDERR: "b''"
+[0m22:13:23.877283 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:13:23.877467 [info ] [MainThread]: Connection:
+[0m22:13:23.877657 [info ] [MainThread]:   database: nyc_taxi
+[0m22:13:23.877797 [info ] [MainThread]:   schema: main
+[0m22:13:23.877939 [info ] [MainThread]:   path: ../data/nyc_taxi.duckdb
+[0m22:13:23.878079 [info ] [MainThread]:   config_options: None
+[0m22:13:23.878216 [info ] [MainThread]:   extensions: None
+[0m22:13:23.878374 [info ] [MainThread]:   settings: {}
+[0m22:13:23.878514 [info ] [MainThread]:   external_root: .
+[0m22:13:23.878644 [info ] [MainThread]:   use_credential_provider: None
+[0m22:13:23.878779 [info ] [MainThread]:   attach: None
+[0m22:13:23.878919 [info ] [MainThread]:   filesystems: None
+[0m22:13:23.879066 [info ] [MainThread]:   remote: None
+[0m22:13:23.879197 [info ] [MainThread]:   plugins: None
+[0m22:13:23.879328 [info ] [MainThread]:   disable_transactions: False
+[0m22:13:23.879690 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:13:23.923974 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m22:13:23.950153 [debug] [MainThread]: Using duckdb connection "debug"
+[0m22:13:23.950392 [debug] [MainThread]: On debug: select 1 as id
+[0m22:13:23.950558 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:13:24.000308 [debug] [MainThread]: SQL status: OK in 0.050 seconds
+[0m22:13:24.001110 [debug] [MainThread]: On debug: Close
+[0m22:13:24.001336 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:13:24.001536 [info ] [MainThread]: [32mAll checks passed![0m
+[0m22:13:24.003354 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.3684757, "process_in_blocks": "0", "process_kernel_time": 0.16542, "process_mem_max_rss": "146194432", "process_out_blocks": "0", "process_user_time": 0.948738}
+[0m22:13:24.003663 [debug] [MainThread]: Command `dbt debug` succeeded at 22:13:24.003595 after 0.37 seconds
+[0m22:13:24.003875 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m22:13:24.004082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109d6fa80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109deec30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109be3ac0>]}
+[0m22:13:24.004332 [debug] [MainThread]: Flushing usage events
+[0m22:13:24.345419 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:13:27.885693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10842cc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109327c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109327ed0>]}
+
+
+============================== 22:13:27.888522 | 999e884e-5a96-48ed-9a24-e853c4e6cf4c ==============================
+[0m22:13:27.888522 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:13:27.888889 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'use_colors': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --project-dir . --profiles-dir .', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'write_json': 'True', 'debug': 'False', 'printer_width': '80', 'introspect': 'True', 'no_print': 'None', 'warn_error': 'None', 'target_path': 'None', 'profiles_dir': '.', 'version_check': 'True', 'log_path': 'logs', 'quiet': 'False', 'fail_fast': 'False', 'empty': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True'}
+[0m22:13:28.033834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '999e884e-5a96-48ed-9a24-e853c4e6cf4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086b0510>]}
+[0m22:13:28.077071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '999e884e-5a96-48ed-9a24-e853c4e6cf4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094b3ce0>]}
+[0m22:13:28.078148 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:13:28.125589 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m22:13:28.190965 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m22:13:28.191362 [debug] [MainThread]: Partial parsing: updated file: taxi_co2://models/staging/stg_yellow_trips.sql
+[0m22:13:28.191581 [debug] [MainThread]: Partial parsing: updated file: taxi_co2://models/staging/stg_green_trips.sql
+[0m22:13:28.323798 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.taxi_co2.stg_yellow_trips' (models/staging/stg_yellow_trips.sql) depends on a source named 'nyc_taxi.vehicle_emissions' which was not found
+[0m22:13:28.325461 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.48653767, "process_in_blocks": "0", "process_kernel_time": 0.142689, "process_mem_max_rss": "134774784", "process_out_blocks": "0", "process_user_time": 1.169208}
+[0m22:13:28.325752 [debug] [MainThread]: Command `dbt run` failed at 22:13:28.325696 after 0.49 seconds
+[0m22:13:28.325989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109429e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a5c850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b5ce60>]}
+[0m22:13:28.326208 [debug] [MainThread]: Flushing usage events
+[0m22:13:28.479336 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:18:00.864455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bbcc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b073c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b073ed0>]}
+
+
+============================== 22:18:00.868522 | 440ccb78-b49e-40a8-a599-709b46163442 ==============================
+[0m22:18:00.868522 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:18:00.868978 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'static_parser': 'True', 'use_colors': 'True', 'warn_error': 'None', 'log_format': 'default', 'log_cache_events': 'False', 'version_check': 'True', 'fail_fast': 'False', 'write_json': 'True', 'invocation_command': 'dbt clean --project-dir . --profiles-dir .', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'log_path': 'logs', 'quiet': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'profiles_dir': '.', 'introspect': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'empty': 'None'}
+[0m22:18:00.957313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '440ccb78-b49e-40a8-a599-709b46163442', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090f8510>]}
+[0m22:18:00.968984 [error] [MainThread]: Encountered an error:
+Runtime Error
+  dbt will not clean the following directories outside the project: ['/Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/dbt/target']
+[0m22:18:00.970825 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": false, "command_wall_clock_time": 0.16250871, "process_in_blocks": "0", "process_kernel_time": 0.128573, "process_mem_max_rss": "118702080", "process_out_blocks": "0", "process_user_time": 0.885848}
+[0m22:18:00.971212 [debug] [MainThread]: Command `dbt clean` failed at 22:18:00.971149 after 0.16 seconds
+[0m22:18:00.971455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2f7350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b599590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b58d150>]}
+[0m22:18:00.971665 [debug] [MainThread]: Flushing usage events
+[0m22:18:01.483504 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:18:06.992032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f68c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e63c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e63ed0>]}
+
+
+============================== 22:18:06.997806 | fbe2353e-7233-493f-9dd4-6607126db3ba ==============================
+[0m22:18:06.997806 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:18:06.998165 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'log_path': 'logs', 'static_parser': 'True', 'debug': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt ls --resource-type source --project-dir . --profiles-dir .', 'use_colors': 'True', 'indirect_selection': 'eager', 'profiles_dir': '.', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'fail_fast': 'False', 'version_check': 'True', 'quiet': 'False', 'warn_error': 'None', 'printer_width': '80', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'no_print': 'None', 'write_json': 'True'}
+[0m22:18:07.165745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fbe2353e-7233-493f-9dd4-6607126db3ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061ec510>]}
+[0m22:18:07.212855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fbe2353e-7233-493f-9dd4-6607126db3ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ff3df0>]}
+[0m22:18:07.214955 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:18:07.264231 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m22:18:07.333372 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m22:18:07.333932 [debug] [MainThread]: Partial parsing: updated file: taxi_co2://models/staging/sources.yml
+[0m22:18:07.334156 [debug] [MainThread]: Partial parsing: updated file: taxi_co2://models/staging/stg_yellow_trips.sql
+[0m22:18:07.334345 [debug] [MainThread]: Partial parsing: updated file: taxi_co2://models/staging/stg_green_trips.sql
+[0m22:18:07.624112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fbe2353e-7233-493f-9dd4-6607126db3ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107599350>]}
+[0m22:18:07.666066 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:18:07.668746 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:18:07.681927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fbe2353e-7233-493f-9dd4-6607126db3ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074b19a0>]}
+[0m22:18:07.682245 [info ] [MainThread]: Found 2 models, 3 sources, 431 macros
+[0m22:18:07.682439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fbe2353e-7233-493f-9dd4-6607126db3ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107291010>]}
+[0m22:18:07.682883 [info ] [MainThread]: source:taxi_co2.nyc_taxi.green_clean
+[0m22:18:07.683060 [info ] [MainThread]: source:taxi_co2.nyc_taxi.vehicle_emissions
+[0m22:18:07.683202 [info ] [MainThread]: source:taxi_co2.nyc_taxi.yellow_clean
+[0m22:18:07.684969 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 0.7405395, "process_in_blocks": "0", "process_kernel_time": 0.170677, "process_mem_max_rss": "136871936", "process_out_blocks": "0", "process_user_time": 1.382804}
+[0m22:18:07.685419 [debug] [MainThread]: Command `dbt ls` succeeded at 22:18:07.685309 after 0.74 seconds
+[0m22:18:07.685711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107773380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e6d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10728c350>]}
+[0m22:18:07.685953 [debug] [MainThread]: Flushing usage events
+[0m22:18:07.813192 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:18:13.072103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105474c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10726fc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10726fed0>]}
+
+
+============================== 22:18:13.075083 | 6974113f-776c-4511-a54f-0ac7b33582b2 ==============================
+[0m22:18:13.075083 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:18:13.075424 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'use_colors': 'True', 'no_print': 'None', 'debug': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt clean --project-dir . --profiles-dir .', 'cache_selected_only': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'static_parser': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'empty': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'use_experimental_parser': 'False', 'write_json': 'True', 'version_check': 'True', 'introspect': 'True', 'profiles_dir': '.', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'logs'}
+[0m22:18:13.161302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6974113f-776c-4511-a54f-0ac7b33582b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059f8510>]}
+[0m22:18:13.169086 [error] [MainThread]: Encountered an error:
+Runtime Error
+  dbt will not clean the following directories outside the project: ['/Users/rameezrauf/Desktop/ds_3022/ds3022-data-project-1/dbt/target']
+[0m22:18:13.170610 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": false, "command_wall_clock_time": 0.15067083, "process_in_blocks": "0", "process_kernel_time": 0.124777, "process_mem_max_rss": "117817344", "process_out_blocks": "0", "process_user_time": 0.887011}
+[0m22:18:13.170893 [debug] [MainThread]: Command `dbt clean` failed at 22:18:13.170840 after 0.15 seconds
+[0m22:18:13.171104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073f7350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107499590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10748d150>]}
+[0m22:18:13.171295 [debug] [MainThread]: Flushing usage events
+[0m22:18:13.329080 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:18:22.136145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110864c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c73c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c73ed0>]}
+
+
+============================== 22:18:22.139400 | 02683171-7ba9-469c-bcf7-d4e33d354876 ==============================
+[0m22:18:22.139400 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:18:22.139923 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'log_format': 'default', 'version_check': 'True', 'invocation_command': 'dbt run --project-dir . --profiles-dir .', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'printer_width': '80', 'introspect': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'target_path': 'None', 'profiles_dir': '.', 'quiet': 'False', 'log_path': 'logs', 'no_print': 'None', 'cache_selected_only': 'False'}
+[0m22:18:22.293372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110cf8510>]}
+[0m22:18:22.339747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111dfbce0>]}
+[0m22:18:22.341695 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:18:22.392132 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m22:18:22.466395 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:18:22.466683 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:18:22.486598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112c88250>]}
+[0m22:18:22.527285 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:18:22.528952 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:18:22.539182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111cf76b0>]}
+[0m22:18:22.539501 [info ] [MainThread]: Found 2 models, 3 sources, 431 macros
+[0m22:18:22.539700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111da2430>]}
+[0m22:18:22.540697 [info ] [MainThread]: 
+[0m22:18:22.540895 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:18:22.541043 [info ] [MainThread]: 
+[0m22:18:22.541304 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:18:22.544321 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_nyc_taxi'
+[0m22:18:22.578076 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi"
+[0m22:18:22.578371 [debug] [ThreadPool]: On list_nyc_taxi: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"nyc_taxi"'
+    
+  
+  
+[0m22:18:22.578546 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:22.655084 [debug] [ThreadPool]: SQL status: OK in 0.076 seconds
+[0m22:18:22.656731 [debug] [ThreadPool]: On list_nyc_taxi: Close
+[0m22:18:22.657172 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc_taxi, now create_nyc_taxi_main)
+[0m22:18:22.657464 [debug] [ThreadPool]: Creating schema "database: "nyc_taxi"
+schema: "main"
+"
+[0m22:18:22.661643 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:18:22.661858 [debug] [ThreadPool]: On create_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "create_nyc_taxi_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='nyc_taxi'
+        and type='sqlite'
+    
+  
+[0m22:18:22.662215 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:18:22.663201 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:18:22.664282 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:18:22.664480 [debug] [ThreadPool]: On create_nyc_taxi_main: BEGIN
+[0m22:18:22.664778 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:18:22.664934 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:18:22.665093 [debug] [ThreadPool]: On create_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "create_nyc_taxi_main"} */
+
+    
+    
+        create schema if not exists "nyc_taxi"."main"
+    
+[0m22:18:22.666012 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:18:22.666531 [debug] [ThreadPool]: On create_nyc_taxi_main: COMMIT
+[0m22:18:22.666710 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:18:22.666860 [debug] [ThreadPool]: On create_nyc_taxi_main: COMMIT
+[0m22:18:22.667110 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:18:22.667264 [debug] [ThreadPool]: On create_nyc_taxi_main: Close
+[0m22:18:22.667914 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_nyc_taxi_main, now list_nyc_taxi_main)
+[0m22:18:22.670855 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:18:22.671056 [debug] [ThreadPool]: On list_nyc_taxi_main: BEGIN
+[0m22:18:22.671209 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:18:22.671491 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:18:22.671645 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:18:22.671805 [debug] [ThreadPool]: On list_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi_main"} */
+select
+      'nyc_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'nyc_taxi'
+  
+[0m22:18:22.681921 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m22:18:22.683173 [debug] [ThreadPool]: On list_nyc_taxi_main: ROLLBACK
+[0m22:18:22.684149 [debug] [ThreadPool]: Failed to rollback 'list_nyc_taxi_main'
+[0m22:18:22.684335 [debug] [ThreadPool]: On list_nyc_taxi_main: Close
+[0m22:18:22.685235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1130a9300>]}
+[0m22:18:22.685544 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:22.685712 [debug] [MainThread]: On master: BEGIN
+[0m22:18:22.685855 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:18:22.686140 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:18:22.686292 [debug] [MainThread]: On master: COMMIT
+[0m22:18:22.686442 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:22.686577 [debug] [MainThread]: On master: COMMIT
+[0m22:18:22.686783 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:18:22.686927 [debug] [MainThread]: On master: Close
+[0m22:18:22.688906 [debug] [Thread-2 (]: Began running node model.taxi_co2.stg_yellow_trips
+[0m22:18:22.689122 [debug] [Thread-1 (]: Began running node model.taxi_co2.stg_green_trips
+[0m22:18:22.689421 [info ] [Thread-2 (]: 2 of 2 START sql table model main.stg_yellow_trips ............................. [RUN]
+[0m22:18:22.689708 [info ] [Thread-1 (]: 1 of 2 START sql table model main.stg_green_trips .............................. [RUN]
+[0m22:18:22.690008 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.taxi_co2.stg_yellow_trips'
+[0m22:18:22.690218 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc_taxi_main, now model.taxi_co2.stg_green_trips)
+[0m22:18:22.690418 [debug] [Thread-2 (]: Began compiling node model.taxi_co2.stg_yellow_trips
+[0m22:18:22.690651 [debug] [Thread-1 (]: Began compiling node model.taxi_co2.stg_green_trips
+[0m22:18:22.695381 [debug] [Thread-2 (]: Writing injected SQL for node "model.taxi_co2.stg_yellow_trips"
+[0m22:18:22.697371 [debug] [Thread-1 (]: Writing injected SQL for node "model.taxi_co2.stg_green_trips"
+[0m22:18:22.697947 [debug] [Thread-2 (]: Began executing node model.taxi_co2.stg_yellow_trips
+[0m22:18:22.704864 [debug] [Thread-1 (]: Began executing node model.taxi_co2.stg_green_trips
+[0m22:18:22.720972 [debug] [Thread-2 (]: Writing runtime sql for node "model.taxi_co2.stg_yellow_trips"
+[0m22:18:22.723914 [debug] [Thread-1 (]: Writing runtime sql for node "model.taxi_co2.stg_green_trips"
+[0m22:18:22.724510 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:18:22.724715 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: BEGIN
+[0m22:18:22.724892 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:18:22.725218 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:18:22.725423 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: BEGIN
+[0m22:18:22.725597 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:18:22.725888 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:18:22.726071 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:18:22.726286 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_green_trips__dbt_tmp"
+  
+    as (
+      
+
+with factors as (
+  select
+    avg(case when lower(vehicle_type) like '%green%' then co2_grams_per_mile end) as g_gpm,
+    avg(co2_grams_per_mile) as default_gpm
+  from "nyc_taxi"."main"."vehicle_emissions"
+)
+
+select
+  pickup_datetime,
+  dropoff_datetime,
+  passenger_count,
+  trip_distance,
+  pu_location_id,
+  do_location_id,
+  total_amount,
+  'green' as cab_color,
+
+  -- CO₂ (kg): distance * grams_per_mile / 1000, fallback to overall avg if needed
+  round(
+    trip_distance *
+    coalesce((select g_gpm from factors), (select default_gpm from factors)) / 1000.0,
+    6
+  ) as trip_co2_kgs,
+
+  -- Average MPH
+  case
+    when (epoch(dropoff_datetime) - epoch(pickup_datetime)) > 0
+      then trip_distance / ((epoch(dropoff_datetime) - epoch(pickup_datetime)) / 3600.0)
+  end as avg_mph,
+
+  -- Time buckets
+  date_part('hour', pickup_datetime) as hour_of_day,
+  dayofweek(pickup_datetime) as day_of_week,
+  date_part('week', pickup_datetime) as week_of_year,
+  month(pickup_datetime) as month_of_year
+
+from "nyc_taxi"."main"."green_clean"
+where pickup_datetime >= timestamp '2015-01-01'
+  and pickup_datetime <  timestamp '2025-01-01'
+    );
+  
+  
+[0m22:18:22.727270 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m22:18:22.727443 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:18:22.727656 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_yellow_trips__dbt_tmp"
+  
+    as (
+      
+
+with factors as (
+  select
+    avg(case when lower(vehicle_type) like '%yellow%' then co2_grams_per_mile end) as y_gpm,
+    avg(co2_grams_per_mile) as default_gpm
+  from "nyc_taxi"."main"."vehicle_emissions"
+)
+
+select
+  pickup_datetime,
+  dropoff_datetime,
+  passenger_count,
+  trip_distance,
+  pu_location_id,
+  do_location_id,
+  total_amount,
+  'yellow' as cab_color,
+
+  -- CO₂ (kg): distance * grams_per_mile / 1000, fallback to overall avg if needed
+  round(
+    trip_distance *
+    coalesce((select y_gpm from factors), (select default_gpm from factors)) / 1000.0,
+    6
+  ) as trip_co2_kgs,
+
+  -- Average MPH
+  case
+    when (epoch(dropoff_datetime) - epoch(pickup_datetime)) > 0
+      then trip_distance / ((epoch(dropoff_datetime) - epoch(pickup_datetime)) / 3600.0)
+  end as avg_mph,
+
+  -- Time buckets
+  date_part('hour', pickup_datetime) as hour_of_day,
+  dayofweek(pickup_datetime) as day_of_week,
+  date_part('week', pickup_datetime) as week_of_year,
+  month(pickup_datetime) as month_of_year
+
+from "nyc_taxi"."main"."yellow_clean"
+where pickup_datetime >= timestamp '2015-01-01'
+  and pickup_datetime <  timestamp '2025-01-01'
+    );
+  
+  
+[0m22:18:32.242425 [debug] [Thread-1 (]: SQL status: OK in 9.515 seconds
+[0m22:18:32.254041 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:18:32.254355 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+alter table "nyc_taxi"."main"."stg_green_trips__dbt_tmp" rename to "stg_green_trips"
+[0m22:18:32.255706 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:18:32.273036 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: COMMIT
+[0m22:18:32.273362 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:18:32.273562 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: COMMIT
+[0m22:18:32.360542 [debug] [Thread-1 (]: SQL status: OK in 0.087 seconds
+[0m22:18:32.372299 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:18:32.372595 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+      drop table if exists "nyc_taxi"."main"."stg_green_trips__dbt_backup" cascade
+    
+[0m22:18:32.373290 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:18:32.376400 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: Close
+[0m22:18:32.378728 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112f422d0>]}
+[0m22:18:32.379370 [info ] [Thread-1 (]: 1 of 2 OK created sql table model main.stg_green_trips ......................... [[32mOK[0m in 9.69s]
+[0m22:18:32.379762 [debug] [Thread-1 (]: Finished running node model.taxi_co2.stg_green_trips
+[0m22:19:40.808506 [debug] [Thread-2 (]: SQL status: OK in 78.063 seconds
+[0m22:19:40.860942 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:19:40.861352 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+alter table "nyc_taxi"."main"."stg_yellow_trips__dbt_tmp" rename to "stg_yellow_trips"
+[0m22:19:40.863110 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m22:19:40.866763 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: COMMIT
+[0m22:19:40.867027 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:19:40.867229 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: COMMIT
+[0m22:19:41.080064 [debug] [Thread-2 (]: SQL status: OK in 0.213 seconds
+[0m22:19:41.083608 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:19:41.083832 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+      drop table if exists "nyc_taxi"."main"."stg_yellow_trips__dbt_backup" cascade
+    
+[0m22:19:41.084506 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m22:19:41.089539 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: Close
+[0m22:19:41.093213 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '02683171-7ba9-469c-bcf7-d4e33d354876', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112fe0940>]}
+[0m22:19:41.096829 [info ] [Thread-2 (]: 2 of 2 OK created sql table model main.stg_yellow_trips ........................ [[32mOK[0m in 78.40s]
+[0m22:19:41.098590 [debug] [Thread-2 (]: Finished running node model.taxi_co2.stg_yellow_trips
+[0m22:19:41.107194 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:19:41.107400 [debug] [MainThread]: On master: BEGIN
+[0m22:19:41.107924 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:19:41.108837 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:19:41.109010 [debug] [MainThread]: On master: COMMIT
+[0m22:19:41.109224 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:19:41.109395 [debug] [MainThread]: On master: COMMIT
+[0m22:19:41.109967 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:19:41.110156 [debug] [MainThread]: On master: Close
+[0m22:19:41.110388 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:19:41.110539 [debug] [MainThread]: Connection 'model.taxi_co2.stg_green_trips' was properly closed.
+[0m22:19:41.110676 [debug] [MainThread]: Connection 'model.taxi_co2.stg_yellow_trips' was properly closed.
+[0m22:19:41.111730 [info ] [MainThread]: 
+[0m22:19:41.112019 [info ] [MainThread]: Finished running 2 table models in 0 hours 1 minutes and 18.57 seconds (78.57s).
+[0m22:19:41.114320 [debug] [MainThread]: Command end result
+[0m22:19:41.361584 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:19:41.363093 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:19:41.366585 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m22:19:41.366773 [info ] [MainThread]: 
+[0m22:19:41.366978 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:19:41.367143 [info ] [MainThread]: 
+[0m22:19:41.367332 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m22:19:41.369901 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 79.28571, "process_in_blocks": "0", "process_kernel_time": 23.616617, "process_mem_max_rss": "4310990848", "process_out_blocks": "0", "process_user_time": 373.37524}
+[0m22:19:41.370173 [debug] [MainThread]: Command `dbt run` succeeded at 22:19:41.370125 after 79.29 seconds
+[0m22:19:41.370384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112947750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112d67140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111dcb6d0>]}
+[0m22:19:41.370585 [debug] [MainThread]: Flushing usage events
+[0m22:19:41.701825 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:25:07.741208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b6cc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120273c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120273ed0>]}
+
+
+============================== 22:25:07.745225 | f2eb416e-e765-4737-a456-c21322c3ecda ==============================
+[0m22:25:07.745225 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:25:07.745634 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'debug': 'False', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'use_colors': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'profiles_dir': '.', 'printer_width': '80', 'log_path': 'logs', 'no_print': 'None', 'version_check': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --project-dir . --profiles-dir .'}
+[0m22:25:07.908432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1069f8510>]}
+[0m22:25:07.953016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1204ffce0>]}
+[0m22:25:07.954640 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:25:08.004784 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m22:25:08.005456 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:25:08.005711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120472750>]}
+[0m22:25:08.719841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120cac230>]}
+[0m22:25:08.758214 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:25:08.759362 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:25:08.773804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121958c90>]}
+[0m22:25:08.774163 [info ] [MainThread]: Found 2 models, 3 sources, 431 macros
+[0m22:25:08.774361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120d22d00>]}
+[0m22:25:08.775455 [info ] [MainThread]: 
+[0m22:25:08.775707 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:25:08.775867 [info ] [MainThread]: 
+[0m22:25:08.776131 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:25:08.778632 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_nyc_taxi'
+[0m22:25:08.812157 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi"
+[0m22:25:08.812450 [debug] [ThreadPool]: On list_nyc_taxi: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"nyc_taxi"'
+    
+  
+  
+[0m22:25:08.812979 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:08.828303 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m22:25:08.829192 [debug] [ThreadPool]: On list_nyc_taxi: Close
+[0m22:25:08.829636 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc_taxi, now create_nyc_taxi_main)
+[0m22:25:08.829871 [debug] [ThreadPool]: Creating schema "database: "nyc_taxi"
+schema: "main"
+"
+[0m22:25:08.833622 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:25:08.833833 [debug] [ThreadPool]: On create_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "create_nyc_taxi_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='nyc_taxi'
+        and type='sqlite'
+    
+  
+[0m22:25:08.834369 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:08.834944 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:25:08.835710 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:25:08.835887 [debug] [ThreadPool]: On create_nyc_taxi_main: BEGIN
+[0m22:25:08.836158 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:25:08.836308 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:25:08.836459 [debug] [ThreadPool]: On create_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "create_nyc_taxi_main"} */
+
+    
+    
+        create schema if not exists "nyc_taxi"."main"
+    
+[0m22:25:08.836785 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:25:08.837276 [debug] [ThreadPool]: On create_nyc_taxi_main: COMMIT
+[0m22:25:08.837445 [debug] [ThreadPool]: Using duckdb connection "create_nyc_taxi_main"
+[0m22:25:08.837593 [debug] [ThreadPool]: On create_nyc_taxi_main: COMMIT
+[0m22:25:08.837869 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:25:08.838038 [debug] [ThreadPool]: On create_nyc_taxi_main: Close
+[0m22:25:08.838740 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_nyc_taxi_main, now list_nyc_taxi_main)
+[0m22:25:08.842284 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:25:08.842469 [debug] [ThreadPool]: On list_nyc_taxi_main: BEGIN
+[0m22:25:08.842609 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:08.842939 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:25:08.843178 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:25:08.843347 [debug] [ThreadPool]: On list_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi_main"} */
+select
+      'nyc_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'nyc_taxi'
+  
+[0m22:25:08.850500 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m22:25:08.851937 [debug] [ThreadPool]: On list_nyc_taxi_main: ROLLBACK
+[0m22:25:08.852945 [debug] [ThreadPool]: Failed to rollback 'list_nyc_taxi_main'
+[0m22:25:08.853155 [debug] [ThreadPool]: On list_nyc_taxi_main: Close
+[0m22:25:08.854288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1218c7710>]}
+[0m22:25:08.854650 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:25:08.854834 [debug] [MainThread]: On master: BEGIN
+[0m22:25:08.854996 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:25:08.855332 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:25:08.855493 [debug] [MainThread]: On master: COMMIT
+[0m22:25:08.855639 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:25:08.855784 [debug] [MainThread]: On master: COMMIT
+[0m22:25:08.856024 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:25:08.856192 [debug] [MainThread]: On master: Close
+[0m22:25:08.858266 [debug] [Thread-1 (]: Began running node model.taxi_co2.stg_green_trips
+[0m22:25:08.858530 [debug] [Thread-2 (]: Began running node model.taxi_co2.stg_yellow_trips
+[0m22:25:08.858868 [info ] [Thread-1 (]: 1 of 2 START sql table model main.stg_green_trips .............................. [RUN]
+[0m22:25:08.859459 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc_taxi_main, now model.taxi_co2.stg_green_trips)
+[0m22:25:08.859215 [info ] [Thread-2 (]: 2 of 2 START sql table model main.stg_yellow_trips ............................. [RUN]
+[0m22:25:08.859750 [debug] [Thread-1 (]: Began compiling node model.taxi_co2.stg_green_trips
+[0m22:25:08.860045 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.taxi_co2.stg_yellow_trips'
+[0m22:25:08.864555 [debug] [Thread-1 (]: Writing injected SQL for node "model.taxi_co2.stg_green_trips"
+[0m22:25:08.864818 [debug] [Thread-2 (]: Began compiling node model.taxi_co2.stg_yellow_trips
+[0m22:25:08.867193 [debug] [Thread-2 (]: Writing injected SQL for node "model.taxi_co2.stg_yellow_trips"
+[0m22:25:08.868013 [debug] [Thread-1 (]: Began executing node model.taxi_co2.stg_green_trips
+[0m22:25:08.868263 [debug] [Thread-2 (]: Began executing node model.taxi_co2.stg_yellow_trips
+[0m22:25:08.890540 [debug] [Thread-1 (]: Writing runtime sql for node "model.taxi_co2.stg_green_trips"
+[0m22:25:08.892947 [debug] [Thread-2 (]: Writing runtime sql for node "model.taxi_co2.stg_yellow_trips"
+[0m22:25:08.893959 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:08.894264 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:25:08.894502 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: BEGIN
+[0m22:25:08.894720 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: BEGIN
+[0m22:25:08.894937 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:08.895164 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:25:08.895716 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:25:08.895968 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:08.896169 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m22:25:08.896415 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_green_trips__dbt_tmp"
+  
+    as (
+      
+
+with factors as (
+  select
+    avg(case when lower(vehicle_type) like '%green%' then co2_grams_per_mile end) as g_gpm,
+    avg(co2_grams_per_mile) as default_gpm
+  from "nyc_taxi"."main"."vehicle_emissions"
+)
+
+select
+  pickup_datetime,
+  dropoff_datetime,
+  passenger_count,
+  trip_distance,
+  pu_location_id,
+  do_location_id,
+  total_amount,
+  'green' as cab_color,
+
+  -- CO₂ (kg): distance * grams_per_mile / 1000, fallback to overall avg if needed
+  round(
+    trip_distance *
+    coalesce((select g_gpm from factors), (select default_gpm from factors)) / 1000.0,
+    6
+  ) as trip_co2_kgs,
+
+  -- Average MPH
+  case
+    when (epoch(dropoff_datetime) - epoch(pickup_datetime)) > 0
+      then trip_distance / ((epoch(dropoff_datetime) - epoch(pickup_datetime)) / 3600.0)
+  end as avg_mph,
+
+  -- Time buckets
+  date_part('hour', pickup_datetime) as hour_of_day,
+  dayofweek(pickup_datetime) as day_of_week,
+  date_part('week', pickup_datetime) as week_of_year,
+  month(pickup_datetime) as month_of_year
+
+from "nyc_taxi"."main"."green_clean"
+where pickup_datetime >= timestamp '2015-01-01'
+  and pickup_datetime <  timestamp '2025-01-01'
+    );
+  
+  
+[0m22:25:08.896673 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:25:08.897148 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+  
+    
+    
+
+    create  table
+      "nyc_taxi"."main"."stg_yellow_trips__dbt_tmp"
+  
+    as (
+      
+
+with factors as (
+  select
+    avg(case when lower(vehicle_type) like '%yellow%' then co2_grams_per_mile end) as y_gpm,
+    avg(co2_grams_per_mile) as default_gpm
+  from "nyc_taxi"."main"."vehicle_emissions"
+)
+
+select
+  pickup_datetime,
+  dropoff_datetime,
+  passenger_count,
+  trip_distance,
+  pu_location_id,
+  do_location_id,
+  total_amount,
+  'yellow' as cab_color,
+
+  -- CO₂ (kg): distance * grams_per_mile / 1000, fallback to overall avg if needed
+  round(
+    trip_distance *
+    coalesce((select y_gpm from factors), (select default_gpm from factors)) / 1000.0,
+    6
+  ) as trip_co2_kgs,
+
+  -- Average MPH
+  case
+    when (epoch(dropoff_datetime) - epoch(pickup_datetime)) > 0
+      then trip_distance / ((epoch(dropoff_datetime) - epoch(pickup_datetime)) / 3600.0)
+  end as avg_mph,
+
+  -- Time buckets
+  date_part('hour', pickup_datetime) as hour_of_day,
+  dayofweek(pickup_datetime) as day_of_week,
+  date_part('week', pickup_datetime) as week_of_year,
+  month(pickup_datetime) as month_of_year
+
+from "nyc_taxi"."main"."yellow_clean"
+where pickup_datetime >= timestamp '2015-01-01'
+  and pickup_datetime <  timestamp '2025-01-01'
+    );
+  
+  
+[0m22:25:20.415621 [debug] [Thread-1 (]: SQL status: OK in 11.518 seconds
+[0m22:25:20.424408 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:20.424748 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_green_trips'
+  
+[0m22:25:20.425434 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:25:20.426597 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:20.426825 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_green_trips'
+  
+[0m22:25:20.427273 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:25:20.435247 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:20.435570 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+alter table "nyc_taxi"."main"."stg_green_trips" rename to "stg_green_trips__dbt_backup"
+[0m22:25:20.436046 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:25:20.437964 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:20.438182 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+alter table "nyc_taxi"."main"."stg_green_trips__dbt_tmp" rename to "stg_green_trips"
+[0m22:25:20.438525 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:25:20.453767 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: COMMIT
+[0m22:25:20.454503 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:20.456576 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: COMMIT
+[0m22:25:20.560082 [debug] [Thread-1 (]: SQL status: OK in 0.103 seconds
+[0m22:25:20.565253 [debug] [Thread-1 (]: Using duckdb connection "model.taxi_co2.stg_green_trips"
+[0m22:25:20.565569 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_green_trips"} */
+
+      drop table if exists "nyc_taxi"."main"."stg_green_trips__dbt_backup" cascade
+    
+[0m22:25:20.661298 [debug] [Thread-1 (]: SQL status: OK in 0.095 seconds
+[0m22:25:20.664505 [debug] [Thread-1 (]: On model.taxi_co2.stg_green_trips: Close
+[0m22:25:20.666890 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12199f490>]}
+[0m22:25:20.668019 [info ] [Thread-1 (]: 1 of 2 OK created sql table model main.stg_green_trips ......................... [[32mOK[0m in 11.81s]
+[0m22:25:20.669290 [debug] [Thread-1 (]: Finished running node model.taxi_co2.stg_green_trips
+[0m22:26:25.835828 [debug] [Thread-2 (]: SQL status: OK in 76.918 seconds
+[0m22:26:25.908575 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:26:25.909869 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_yellow_trips'
+  
+[0m22:26:25.911807 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m22:26:25.914187 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:26:25.914769 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_yellow_trips'
+  
+[0m22:26:25.915801 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m22:26:25.937889 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:26:25.938141 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+alter table "nyc_taxi"."main"."stg_yellow_trips" rename to "stg_yellow_trips__dbt_backup"
+[0m22:26:25.939714 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m22:26:25.941565 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:26:25.941765 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+alter table "nyc_taxi"."main"."stg_yellow_trips__dbt_tmp" rename to "stg_yellow_trips"
+[0m22:26:25.942060 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m22:26:25.943380 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: COMMIT
+[0m22:26:25.943572 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:26:25.944059 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: COMMIT
+[0m22:26:26.218803 [debug] [Thread-2 (]: SQL status: OK in 0.274 seconds
+[0m22:26:26.220257 [debug] [Thread-2 (]: Using duckdb connection "model.taxi_co2.stg_yellow_trips"
+[0m22:26:26.220467 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "model.taxi_co2.stg_yellow_trips"} */
+
+      drop table if exists "nyc_taxi"."main"."stg_yellow_trips__dbt_backup" cascade
+    
+[0m22:26:26.615798 [debug] [Thread-2 (]: SQL status: OK in 0.395 seconds
+[0m22:26:26.618659 [debug] [Thread-2 (]: On model.taxi_co2.stg_yellow_trips: Close
+[0m22:26:26.622901 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f2eb416e-e765-4737-a456-c21322c3ecda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121de0910>]}
+[0m22:26:26.625553 [info ] [Thread-2 (]: 2 of 2 OK created sql table model main.stg_yellow_trips ........................ [[32mOK[0m in 77.76s]
+[0m22:26:26.625967 [debug] [Thread-2 (]: Finished running node model.taxi_co2.stg_yellow_trips
+[0m22:26:26.635570 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:26.636157 [debug] [MainThread]: On master: BEGIN
+[0m22:26:26.636318 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:26:26.637013 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:26:26.637212 [debug] [MainThread]: On master: COMMIT
+[0m22:26:26.637424 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:26.637589 [debug] [MainThread]: On master: COMMIT
+[0m22:26:26.637869 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:26:26.638061 [debug] [MainThread]: On master: Close
+[0m22:26:26.638308 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:26:26.638501 [debug] [MainThread]: Connection 'model.taxi_co2.stg_green_trips' was properly closed.
+[0m22:26:26.638779 [debug] [MainThread]: Connection 'model.taxi_co2.stg_yellow_trips' was properly closed.
+[0m22:26:26.639918 [info ] [MainThread]: 
+[0m22:26:26.640203 [info ] [MainThread]: Finished running 2 table models in 0 hours 1 minutes and 17.86 seconds (77.86s).
+[0m22:26:26.642611 [debug] [MainThread]: Command end result
+[0m22:26:26.713427 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:26:26.723070 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:26:26.729109 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m22:26:26.729387 [info ] [MainThread]: 
+[0m22:26:26.729635 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:26:26.729874 [info ] [MainThread]: 
+[0m22:26:26.730469 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m22:26:26.743181 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 79.05005, "process_in_blocks": "0", "process_kernel_time": 25.562557, "process_mem_max_rss": "6309756928", "process_out_blocks": "1", "process_user_time": 376.83368}
+[0m22:26:26.751551 [debug] [MainThread]: Command `dbt run` succeeded at 22:26:26.751431 after 79.06 seconds
+[0m22:26:26.753605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120e6edd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121bb2ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12040c8a0>]}
+[0m22:26:26.753973 [debug] [MainThread]: Flushing usage events
+[0m22:26:27.041051 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:26:38.762697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108854c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10974fc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10974fed0>]}
+
+
+============================== 22:26:38.771055 | 900de980-dbb0-46df-8ed7-2aa328906e0c ==============================
+[0m22:26:38.771055 [info ] [MainThread]: Running with dbt=1.10.11
+[0m22:26:38.771471 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'no_print': 'None', 'quiet': 'False', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt test --project-dir . --profiles-dir .', 'introspect': 'True', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'profiles_dir': '.', 'fail_fast': 'False', 'version_check': 'True', 'static_parser': 'True'}
+[0m22:26:38.955860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '900de980-dbb0-46df-8ed7-2aa328906e0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ad8510>]}
+[0m22:26:39.005235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '900de980-dbb0-46df-8ed7-2aa328906e0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098dbce0>]}
+[0m22:26:39.006975 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m22:26:39.062100 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m22:26:39.136882 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m22:26:39.137384 [debug] [MainThread]: Partial parsing: added file: taxi_co2://models/schema.yml
+[0m22:26:39.312287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '900de980-dbb0-46df-8ed7-2aa328906e0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e85450>]}
+[0m22:26:39.402610 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:26:39.403793 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:26:39.426093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '900de980-dbb0-46df-8ed7-2aa328906e0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ed5c70>]}
+[0m22:26:39.426420 [info ] [MainThread]: Found 2 models, 4 data tests, 3 sources, 431 macros
+[0m22:26:39.426624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '900de980-dbb0-46df-8ed7-2aa328906e0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10973a970>]}
+[0m22:26:39.427659 [info ] [MainThread]: 
+[0m22:26:39.427861 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:26:39.428024 [info ] [MainThread]: 
+[0m22:26:39.428304 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:26:39.431215 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_nyc_taxi_main'
+[0m22:26:39.468091 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:26:39.468372 [debug] [ThreadPool]: On list_nyc_taxi_main: BEGIN
+[0m22:26:39.468552 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:26:39.503223 [debug] [ThreadPool]: SQL status: OK in 0.035 seconds
+[0m22:26:39.503539 [debug] [ThreadPool]: Using duckdb connection "list_nyc_taxi_main"
+[0m22:26:39.503734 [debug] [ThreadPool]: On list_nyc_taxi_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "connection_name": "list_nyc_taxi_main"} */
+select
+      'nyc_taxi' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'nyc_taxi'
+  
+[0m22:26:39.512513 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m22:26:39.513580 [debug] [ThreadPool]: On list_nyc_taxi_main: ROLLBACK
+[0m22:26:39.514975 [debug] [ThreadPool]: Failed to rollback 'list_nyc_taxi_main'
+[0m22:26:39.515192 [debug] [ThreadPool]: On list_nyc_taxi_main: Close
+[0m22:26:39.518907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '900de980-dbb0-46df-8ed7-2aa328906e0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109eebe10>]}
+[0m22:26:39.519297 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:39.519833 [debug] [MainThread]: On master: BEGIN
+[0m22:26:39.520414 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:26:39.520900 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:26:39.521091 [debug] [MainThread]: On master: COMMIT
+[0m22:26:39.521260 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:39.521417 [debug] [MainThread]: On master: COMMIT
+[0m22:26:39.521693 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:26:39.521850 [debug] [MainThread]: On master: Close
+[0m22:26:39.524636 [debug] [Thread-2 (]: Began running node test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874
+[0m22:26:39.524964 [debug] [Thread-3 (]: Began running node test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed
+[0m22:26:39.525335 [debug] [Thread-1 (]: Began running node test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1
+[0m22:26:39.525604 [debug] [Thread-4 (]: Began running node test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2
+[0m22:26:39.525846 [info ] [Thread-2 (]: 2 of 4 START test not_null_stg_green_trips_trip_co2_kgs ........................ [RUN]
+[0m22:26:39.526161 [info ] [Thread-3 (]: 3 of 4 START test not_null_stg_yellow_trips_pickup_datetime .................... [RUN]
+[0m22:26:39.526481 [info ] [Thread-1 (]: 1 of 4 START test not_null_stg_green_trips_pickup_datetime ..................... [RUN]
+[0m22:26:39.527055 [info ] [Thread-4 (]: 4 of 4 START test not_null_stg_yellow_trips_trip_co2_kgs ....................... [RUN]
+[0m22:26:39.527422 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874'
+[0m22:26:39.527785 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed'
+[0m22:26:39.528104 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc_taxi_main, now test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1)
+[0m22:26:39.529182 [debug] [Thread-1 (]: Began compiling node test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1
+[0m22:26:39.528677 [debug] [Thread-2 (]: Began compiling node test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874
+[0m22:26:39.528978 [debug] [Thread-3 (]: Began compiling node test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed
+[0m22:26:39.528414 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2'
+[0m22:26:39.550711 [debug] [Thread-1 (]: Writing injected SQL for node "test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1"
+[0m22:26:39.551959 [debug] [Thread-2 (]: Writing injected SQL for node "test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874"
+[0m22:26:39.552635 [debug] [Thread-3 (]: Writing injected SQL for node "test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed"
+[0m22:26:39.552871 [debug] [Thread-4 (]: Began compiling node test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2
+[0m22:26:39.555589 [debug] [Thread-4 (]: Writing injected SQL for node "test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2"
+[0m22:26:39.556066 [debug] [Thread-2 (]: Began executing node test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874
+[0m22:26:39.562348 [debug] [Thread-1 (]: Began executing node test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1
+[0m22:26:39.568405 [debug] [Thread-3 (]: Began executing node test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed
+[0m22:26:39.576931 [debug] [Thread-3 (]: Writing runtime sql for node "test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed"
+[0m22:26:39.577386 [debug] [Thread-2 (]: Writing runtime sql for node "test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874"
+[0m22:26:39.577689 [debug] [Thread-4 (]: Began executing node test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2
+[0m22:26:39.582716 [debug] [Thread-1 (]: Writing runtime sql for node "test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1"
+[0m22:26:39.584773 [debug] [Thread-4 (]: Writing runtime sql for node "test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2"
+[0m22:26:39.585970 [debug] [Thread-1 (]: Using duckdb connection "test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1"
+[0m22:26:39.586449 [debug] [Thread-2 (]: Using duckdb connection "test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874"
+[0m22:26:39.586841 [debug] [Thread-1 (]: On test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1: BEGIN
+[0m22:26:39.587121 [debug] [Thread-4 (]: Using duckdb connection "test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2"
+[0m22:26:39.587416 [debug] [Thread-3 (]: Using duckdb connection "test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed"
+[0m22:26:39.587677 [debug] [Thread-2 (]: On test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874: BEGIN
+[0m22:26:39.587932 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:26:39.588262 [debug] [Thread-4 (]: On test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2: BEGIN
+[0m22:26:39.588518 [debug] [Thread-3 (]: On test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed: BEGIN
+[0m22:26:39.589802 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:26:39.588869 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:26:39.590173 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:26:39.590686 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m22:26:39.591143 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m22:26:39.589528 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:26:39.591481 [debug] [Thread-1 (]: Using duckdb connection "test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1"
+[0m22:26:39.592156 [debug] [Thread-2 (]: Using duckdb connection "test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874"
+[0m22:26:39.592378 [debug] [Thread-3 (]: Using duckdb connection "test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed"
+[0m22:26:39.592728 [debug] [Thread-1 (]: On test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select pickup_datetime
+from "nyc_taxi"."main"."stg_green_trips"
+where pickup_datetime is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:26:39.593041 [debug] [Thread-2 (]: On test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_co2_kgs
+from "nyc_taxi"."main"."stg_green_trips"
+where trip_co2_kgs is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:26:39.593253 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m22:26:39.593467 [debug] [Thread-3 (]: On test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select pickup_datetime
+from "nyc_taxi"."main"."stg_yellow_trips"
+where pickup_datetime is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:26:39.593971 [debug] [Thread-4 (]: Using duckdb connection "test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2"
+[0m22:26:39.594633 [debug] [Thread-4 (]: On test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "taxi_co2", "target_name": "dev", "node_id": "test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_co2_kgs
+from "nyc_taxi"."main"."stg_yellow_trips"
+where trip_co2_kgs is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:26:39.595843 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m22:26:39.596151 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:26:39.599780 [debug] [Thread-3 (]: On test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed: ROLLBACK
+[0m22:26:39.600153 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m22:26:39.601246 [debug] [Thread-1 (]: On test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1: ROLLBACK
+[0m22:26:39.601500 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m22:26:39.601926 [debug] [Thread-3 (]: Failed to rollback 'test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed'
+[0m22:26:39.602646 [debug] [Thread-1 (]: Failed to rollback 'test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1'
+[0m22:26:39.603748 [debug] [Thread-2 (]: On test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874: ROLLBACK
+[0m22:26:39.604792 [debug] [Thread-4 (]: On test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2: ROLLBACK
+[0m22:26:39.605080 [debug] [Thread-3 (]: On test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed: Close
+[0m22:26:39.605362 [debug] [Thread-1 (]: On test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1: Close
+[0m22:26:39.606349 [debug] [Thread-2 (]: Failed to rollback 'test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874'
+[0m22:26:39.607877 [debug] [Thread-4 (]: Failed to rollback 'test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2'
+[0m22:26:39.608822 [info ] [Thread-3 (]: 3 of 4 PASS not_null_stg_yellow_trips_pickup_datetime .......................... [[32mPASS[0m in 0.08s]
+[0m22:26:39.609348 [info ] [Thread-1 (]: 1 of 4 PASS not_null_stg_green_trips_pickup_datetime ........................... [[32mPASS[0m in 0.08s]
+[0m22:26:39.609724 [debug] [Thread-2 (]: On test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874: Close
+[0m22:26:39.609959 [debug] [Thread-4 (]: On test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2: Close
+[0m22:26:39.612923 [info ] [Thread-4 (]: 4 of 4 PASS not_null_stg_yellow_trips_trip_co2_kgs ............................. [[32mPASS[0m in 0.08s]
+[0m22:26:39.612084 [debug] [Thread-1 (]: Finished running node test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1
+[0m22:26:39.612502 [info ] [Thread-2 (]: 2 of 4 PASS not_null_stg_green_trips_trip_co2_kgs .............................. [[32mPASS[0m in 0.09s]
+[0m22:26:39.611147 [debug] [Thread-3 (]: Finished running node test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed
+[0m22:26:39.613221 [debug] [Thread-4 (]: Finished running node test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2
+[0m22:26:39.614022 [debug] [Thread-2 (]: Finished running node test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874
+[0m22:26:39.617493 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:39.618170 [debug] [MainThread]: On master: BEGIN
+[0m22:26:39.618517 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:26:39.619195 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:26:39.619917 [debug] [MainThread]: On master: COMMIT
+[0m22:26:39.620267 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:39.620440 [debug] [MainThread]: On master: COMMIT
+[0m22:26:39.620798 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:26:39.620966 [debug] [MainThread]: On master: Close
+[0m22:26:39.621203 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:26:39.621350 [debug] [MainThread]: Connection 'test.taxi_co2.not_null_stg_green_trips_pickup_datetime.ba048337f1' was properly closed.
+[0m22:26:39.621488 [debug] [MainThread]: Connection 'test.taxi_co2.not_null_stg_green_trips_trip_co2_kgs.d95eaef874' was properly closed.
+[0m22:26:39.622407 [debug] [MainThread]: Connection 'test.taxi_co2.not_null_stg_yellow_trips_pickup_datetime.069acef7ed' was properly closed.
+[0m22:26:39.622618 [debug] [MainThread]: Connection 'test.taxi_co2.not_null_stg_yellow_trips_trip_co2_kgs.30f50233d2' was properly closed.
+[0m22:26:39.622821 [info ] [MainThread]: 
+[0m22:26:39.623013 [info ] [MainThread]: Finished running 4 data tests in 0 hours 0 minutes and 0.19 seconds (0.19s).
+[0m22:26:39.623876 [debug] [MainThread]: Command end result
+[0m22:26:39.644513 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m22:26:39.645730 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m22:26:39.649932 [debug] [MainThread]: Wrote artifact RunExecutionResult to ./target/run_results.json
+[0m22:26:39.650167 [info ] [MainThread]: 
+[0m22:26:39.650470 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:26:39.650697 [info ] [MainThread]: 
+[0m22:26:39.650886 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m22:26:39.652458 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.95340794, "process_in_blocks": "0", "process_kernel_time": 0.239944, "process_mem_max_rss": "169508864", "process_out_blocks": "0", "process_user_time": 1.654311}
+[0m22:26:39.652834 [debug] [MainThread]: Command `dbt test` succeeded at 22:26:39.652769 after 0.95 seconds
+[0m22:26:39.653063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10975d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2ccaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2cc890>]}
+[0m22:26:39.653279 [debug] [MainThread]: Flushing usage events
+[0m22:26:39.841007 [debug] [MainThread]: An error was encountered while trying to flush usage events

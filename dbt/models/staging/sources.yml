@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+    schema: main          # this is the DuckDB schema your tables are in
+    tables:
+      - name: vehicle_emissions
+      - name: yellow_clean
+      - name: green_clean
