@@ -10,6 +10,7 @@ __pycache__/
 
 # Logs (only runtime logs, not source-controlled configs)
 logs/*.log
+dbt/logs
 
 # Data & databases (too large for git, can be rebuilt with scripts)
 data/**/*.duckdb
