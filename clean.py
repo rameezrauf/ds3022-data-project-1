@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 # Column set used to identify duplicate trips (no trip id in minimal schema)
 DUP_KEYS = """
     pickup_datetime, dropoff_datetime, passenger_count, trip_distance,
-    pu_location_id, do_location_id, total_amount, cab_color
+    pu_location_id, do_location_id, total_amount
 """
 
 def make_clean_sql(raw_table: str, clean_table: str) -> str:
@@ -50,7 +50,7 @@ def make_clean_sql(raw_table: str, clean_table: str) -> str:
     )
     SELECT
         pickup_datetime, dropoff_datetime, passenger_count, trip_distance,
-        pu_location_id, do_location_id, total_amount, cab_color
+        pu_location_id, do_location_id, total_amount
     FROM de_duped
     WHERE rn = 1
       AND passenger_count <> 0
@@ -69,7 +69,6 @@ def make_tests(table: str) -> Dict[str, str]:
       - trips > 24 hours (86400 sec)
     """
     return {
-        # Count groups with more than 1 identical record
         "duplicates_remaining": f"""
             SELECT COUNT(*) FROM (
                 SELECT 1
@@ -136,19 +135,16 @@ def clean_table(con: duckdb.DuckDBPyConnection, raw_table: str, clean_table: str
       - report pre/post rows
       - run & report tests
     """
-    # Row counts for context
     raw_cnt = con.execute(f"SELECT COUNT(*) FROM {raw_table}").fetchone()[0]
     print(f"{label} raw row count: {raw_cnt}")
     logger.info("%s raw row count: %s", label, raw_cnt)
 
-    # Build the cleaned table
     con.execute(make_clean_sql(raw_table, clean_table))
 
     clean_cnt = con.execute(f"SELECT COUNT(*) FROM {clean_table}").fetchone()[0]
     print(f"{label} CLEAN row count: {clean_cnt}")
     logger.info("%s CLEAN row count: %s", label, clean_cnt)
 
-    # Verification tests
     ok, counts = run_tests(con, clean_table)
     pretty_report(f"{label}: {clean_table}", ok, counts)
 

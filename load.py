@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-load.py
--------
-Loads NYC Taxi Trip data for Yellow & Green cabs across 2015–2024 into a local DuckDB.
-- Downloads Parquet files to ./data/raw/<type>/<year>/
-- Loads vehicle_emissions.csv from ./data/
-- Normalizes schema differences across years and inserts into yellow_raw, green_raw
-- Prints/logs raw row counts + richer descriptive stats (pre-cleaning), per rubric
+load.py — minimal, rubric-ready
 
-Log file: load.log
-Database: ./data/nyc_taxi.duckdb
+What it does:
+- Downloads NYC Taxi Parquet files for Yellow & Green (2015–2024) to ./data/raw/<type>/<year>/
+- Loads ./data/vehicle_emissions.csv (only needed columns) into DuckDB
+- Normalizes schema differences and inserts into yellow_raw, green_raw
+- Prints basic pre-cleaning stats
+
+Outputs:
+- DuckDB at ./data/nyc_taxi.duckdb
+- Log at ./logs/load.log
 """
 
 import logging
@@ -20,65 +21,48 @@ from typing import List, Tuple
 import requests
 import duckdb
 
-# ------------------ logging ------------------
-LOG_DIR = Path(__file__).resolve().parent / "logs"
-LOG_DIR.mkdir(exist_ok=True)
-
-#logger code
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_DIR / "load.log"),
-        logging.StreamHandler()
-    ],
-)
-log = logging.getLogger("load")
-
-# ------------------ constants ------------------
+# ---------------- paths & logging ----------------
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 DB_PATH = DATA_DIR / "nyc_taxi.duckdb"
 VEHICLE_EMISSIONS_CSV = DATA_DIR / "vehicle_emissions.csv"
 
-BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data"
-YEARS = list(range(2015, 2025))  # 2015–2024 inclusive (10 years for bonus)
-MONTHS = [f"{m:02d}" for m in range(1, 13)]
-
-USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/124.0 Safari/537.36"
+LOG_DIR = BASE_DIR / "logs"
+LOG_DIR.mkdir(exist_ok=True)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+    handlers=[logging.FileHandler(LOG_DIR / "load.log"), logging.StreamHandler()],
 )
+log = logging.getLogger("load")
+
+# ---------------- constants ----------------
+BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data"
+YEARS = list(range(2015, 2025))           # 2015–2024 inclusive
+MONTHS = [f"{m:02d}" for m in range(1, 13)]
+USER_AGENT = "Mozilla/5.0"
 TIMEOUT = 60
-RETRIES = 3
-BACKOFF = 2.0
+RETRIES = 2
+SKIP_EXISTING = True
 
-
-# ------------------ helpers ------------------
+# ---------------- helpers ----------------
+# Create the ./data/raw/<type>/<year>/ folder structure if missing
 def ensure_dirs() -> None:
-    """Ensure base data and raw folders exist for both taxi types across all YEARS."""
     DATA_DIR.mkdir(exist_ok=True)
     for t in ("yellow", "green"):
         for y in YEARS:
             (RAW_DIR / t / str(y)).mkdir(parents=True, exist_ok=True)
 
-
+# Build the download URL and the local destination path for a given taxi type/year/month
 def url_and_dest(taxi_type: str, year: int, month: str) -> Tuple[str, Path]:
-    """Build cloud URL and local destination path for a given taxi type/year/month."""
     fname = f"{taxi_type}_tripdata_{year}-{month}.parquet"
-    url = f"{BASE_URL}/{fname}"
-    dest = RAW_DIR / taxi_type / str(year) / fname
-    return url, dest
+    return f"{BASE_URL}/{fname}", RAW_DIR / taxi_type / str(year) / fname
 
-
+# Download a file with minimal retries; skip if already present (when SKIP_EXISTING=True)
 def download_with_retries(url: str, dest: Path) -> bool:
-    """
-    Download a file with simple retry/backoff and a desktop-like user agent.
-    Returns True if the file exists (downloaded or already present).
-    """
-    if dest.exists() and dest.stat().st_size > 0:
+    if SKIP_EXISTING and dest.exists() and dest.stat().st_size > 0:
+        log.info(f"Already present, skipping: {dest.name}")
         return True
     headers = {"User-Agent": USER_AGENT}
     for attempt in range(1, RETRIES + 1):
@@ -88,32 +72,26 @@ def download_with_retries(url: str, dest: Path) -> bool:
                     tmp = dest.with_suffix(".part")
                     with open(tmp, "wb") as f:
                         for chunk in r.iter_content(1024 * 1024):
-                            if chunk:
-                                f.write(chunk)
+                            if chunk: f.write(chunk)
                     tmp.rename(dest)
                     log.info(f"Downloaded {dest.name}")
                     return True
-                else:
-                    # 403s/404s are common for missing months/types—just warn and continue
-                    log.warning(f"[{r.status_code}] {url}")
+                log.warning(f"[{r.status_code}] {url}")
         except Exception as e:
             log.warning(f"Attempt {attempt}/{RETRIES} failed for {url}: {e}")
-        time.sleep(BACKOFF * attempt)
+        time.sleep(1.5 * attempt)
     return dest.exists() and dest.stat().st_size > 0
 
-
+# Collect a list of all local parquet files for a taxi type across all configured years
 def local_files(taxi_type: str) -> List[str]:
-    """Return sorted list of all local parquet files for a taxi type across all YEARS."""
     files: List[str] = []
     for y in YEARS:
-        folder = RAW_DIR / taxi_type / str(y)
-        files.extend(str(p) for p in sorted(folder.glob("*.parquet")))
+        files += [str(p) for p in sorted((RAW_DIR / taxi_type / str(y)).glob("*.parquet"))]
     return files
 
-
-# ------------------ load steps ------------------
+# ---------------- load steps ----------------
+# Create/refresh the vehicle_emissions lookup table from CSV (only required columns)
 def load_vehicle_emissions(con: duckdb.DuckDBPyConnection) -> None:
-    """load vehicle_emissions lookup from CSV under ./data/."""
     con.execute("""
         CREATE TABLE IF NOT EXISTS vehicle_emissions (
             vehicle_type VARCHAR,
@@ -121,20 +99,18 @@ def load_vehicle_emissions(con: duckdb.DuckDBPyConnection) -> None:
         );
         DELETE FROM vehicle_emissions;
     """)
-    con.execute(
-        "INSERT INTO vehicle_emissions SELECT * FROM read_csv_auto(?, header=True)",
-        [str(VEHICLE_EMISSIONS_CSV)],
-    )
+    # Read only the needed columns (ignore extras), cast explicitly
+    con.execute("""
+        INSERT INTO vehicle_emissions
+        SELECT vehicle_type, CAST(co2_grams_per_mile AS DOUBLE)
+        FROM read_csv_auto(?, header=True, all_varchar=True)
+    """, [str(VEHICLE_EMISSIONS_CSV)])
     n = con.execute("SELECT COUNT(*) FROM vehicle_emissions").fetchone()[0]
     print(f"vehicle_emissions raw row count: {n:,}")
     log.info(f"vehicle_emissions rows: {n:,}")
 
-
+# Create empty normalized raw tables (yellow_raw, green_raw) and clear any existing rows
 def create_raw_tables(con: duckdb.DuckDBPyConnection) -> None:
-    """
-    Create raw tables (idempotent) and clear them for a fresh load.
-    We keep a minimal, stable schema that works across all years.
-    """
     con.execute("""
         CREATE TABLE IF NOT EXISTS yellow_raw (
             pickup_datetime TIMESTAMP,
@@ -160,145 +136,108 @@ def create_raw_tables(con: duckdb.DuckDBPyConnection) -> None:
         DELETE FROM green_raw;
     """)
 
-
-def insert_trips(con: duckdb.DuckDBPyConnection, taxi_type: str):
-    """
-    Insert normalized rows into {taxi_type}_raw for the selected years.
-
-    - For yellow -> use tpep_* timestamp columns
-    - For green  -> use lpep_* timestamp columns
-    - Introspects the Parquet schema and only references columns that exist.
-      If a column like PULocationID/DOLocationID is missing in older months,
-      we insert NULL for that column to keep a consistent target schema.
-    """
+# Read monthly parquet files and insert into target raw table with a stable schema
+def insert_trips(con: duckdb.DuckDBPyConnection, taxi_type: str) -> None:
     files = local_files(taxi_type)
     if not files:
         log.warning(f"No local files for {taxi_type}. Skipping insert.")
         return
+    # Infer columns available across all files
+    desc = con.execute("SELECT * FROM read_parquet(?, union_by_name=true) LIMIT 0", [files]).description
+    cols = {c[0].lower() for c in desc}
 
-    # Peek at the schema across all files (no rows) to know which columns exist
-    # union_by_name=true aligns differing monthly schemas
-    tmp = con.execute(
-        "SELECT * FROM read_parquet(?, union_by_name=true) LIMIT 0",
-        [files],
-    )
-    cols = {c[0].lower() for c in tmp.description}  # column names present
-
-    # Timestamp columns by type
     if taxi_type == "yellow":
-        pickup_expr  = "tpep_pickup_datetime"
-        dropoff_expr = "tpep_dropoff_datetime"
-        if "tpep_pickup_datetime" not in cols or "tpep_dropoff_datetime" not in cols:
-            raise RuntimeError("Expected tpep_* columns not found in yellow files.")
+        pickup, dropoff = "tpep_pickup_datetime", "tpep_dropoff_datetime"
+        if pickup not in cols or dropoff not in cols:
+            raise RuntimeError("Expected tpep_* columns for yellow not found.")
     else:
-        pickup_expr  = "lpep_pickup_datetime"
-        dropoff_expr = "lpep_dropoff_datetime"
-        if "lpep_pickup_datetime" not in cols or "lpep_dropoff_datetime" not in cols:
-            raise RuntimeError("Expected lpep_* columns not found in green files.")
+        pickup, dropoff = "lpep_pickup_datetime", "lpep_dropoff_datetime"
+        if pickup not in cols or dropoff not in cols:
+            raise RuntimeError("Expected lpep_* columns for green not found.")
 
-    # Optional columns (exist in most modern months; may be absent in older files)
     pu_expr = '"PULocationID"' if "pulocationid" in cols else "CAST(NULL AS INTEGER)"
     do_expr = '"DOLocationID"' if "dolocationid" in cols else "CAST(NULL AS INTEGER)"
-    pay_expr = "payment_type" if "payment_type" in cols else "CAST(NULL AS INTEGER)"
-    total_expr = "total_amount" if "total_amount" in cols else "CAST(NULL AS DOUBLE)"
-
-    # Passenger count & distance (present, but types vary across months)
-    pass_expr = "CAST(passenger_count AS INTEGER)" if "passenger_count" in cols else "CAST(NULL AS INTEGER)"
-    dist_expr = "trip_distance" if "trip_distance" in cols else "CAST(NULL AS DOUBLE)"
+    pay    = "payment_type" if "payment_type" in cols else "CAST(NULL AS INTEGER)"
+    total  = "total_amount"  if "total_amount"  in cols else "CAST(NULL AS DOUBLE)"
+    pax    = "CAST(passenger_count AS INTEGER)" if "passenger_count" in cols else "CAST(NULL AS INTEGER)"
+    dist   = "trip_distance" if "trip_distance" in cols else "CAST(NULL AS DOUBLE)"
 
     target = f"{taxi_type}_raw"
-
-    sql = f"""
+    con.execute(f"""
         INSERT INTO {target}
         SELECT
-            {pickup_expr}   AS pickup_datetime,
-            {dropoff_expr}  AS dropoff_datetime,
-            {pass_expr}     AS passenger_count,
-            {dist_expr}     AS trip_distance,
-            {pu_expr}       AS pu_location_id,
-            {do_expr}       AS do_location_id,
-            {pay_expr}      AS payment_type,
-            {total_expr}    AS total_amount
+            {pickup}  AS pickup_datetime,
+            {dropoff} AS dropoff_datetime,
+            {pax}     AS passenger_count,
+            {dist}    AS trip_distance,
+            {pu_expr} AS pu_location_id,
+            {do_expr} AS do_location_id,
+            {pay}     AS payment_type,
+            {total}   AS total_amount
         FROM read_parquet(?, union_by_name=true)
-    """
-    con.execute(sql, [files])
+    """, [files])
 
-
-# ---------- NEW: richer descriptive stats ----------
+# Compute and print concise pre-cleaning stats for each raw table (with simple plausibility filters)
 def print_raw_stats(con: duckdb.DuckDBPyConnection) -> None:
-    """
-    Print/log richer pre-cleaning stats per raw table:
-      - total rows
-      - avg/median passenger_count
-      - avg/median/min/max trip_distance
-      - first/last pickup_datetime
-    """
-    def summarize(table: str) -> dict:
+    # Helper: summarize one table’s counts and distributions within bounded ranges
+    def summarize(table: str):
         return con.execute(f"""
+            WITH base AS (
+                SELECT *
+                FROM {table}
+                WHERE pickup_datetime >= '2015-01-01'
+                  AND pickup_datetime <  '2025-01-01'
+                  AND trip_distance BETWEEN 0 AND 200
+                  AND passenger_count BETWEEN 0 AND 8
+            )
             SELECT
-                COUNT(*)                                  AS rows,
-                AVG(passenger_count)                      AS avg_pax,
-                MEDIAN(passenger_count)                   AS med_pax,
-                AVG(trip_distance)                        AS avg_miles,
-                MEDIAN(trip_distance)                     AS med_miles,
-                MIN(trip_distance)                        AS min_miles,
-                MAX(trip_distance)                        AS max_miles,
-                MIN(pickup_datetime)                      AS first_pickup,
-                MAX(pickup_datetime)                      AS last_pickup
-            FROM {table}
+                COUNT(*)                AS rows,
+                AVG(passenger_count)    AS avg_pax,
+                MEDIAN(passenger_count) AS med_pax,
+                AVG(trip_distance)      AS avg_miles,
+                MEDIAN(trip_distance)   AS med_miles,
+                MIN(trip_distance)      AS min_miles,
+                MAX(trip_distance)      AS max_miles,
+                MIN(pickup_datetime)    AS first_pickup,
+                MAX(pickup_datetime)    AS last_pickup
+            FROM base
         """).fetchone()
 
-    for table, label in (("yellow_raw", "yellow_raw"), ("green_raw", "green_raw ")):
+    for table in ("yellow_raw", "green_raw"):
         try:
-            r = summarize(table)
-            (rows, avg_pax, med_pax, avg_mi, med_mi, min_mi, max_mi, first_ts, last_ts) = r
-            msg_lines = [
-                f"{label} raw row count: {rows:,}",
-                f"{label} passenger_count: avg={avg_pax:.2f} | median={med_pax:.2f}",
-                f"{label} trip_distance (mi): avg={avg_mi:.3f} | median={med_mi:.3f} | min={min_mi:.3f} | max={max_mi:.3f}",
-                f"{label} pickup range: {first_ts} → {last_ts}",
-            ]
-            for line in msg_lines:
-                print(line)
-                log.info(line)
+            rows, avg_pax, med_pax, avg_mi, med_mi, min_mi, max_mi, first_ts, last_ts = summarize(table)
+            print(f"{table} raw row count: {rows:,}")
+            print(f"{table} passenger_count: avg={avg_pax:.2f} | median={med_pax:.2f}")
+            print(f"{table} trip_distance (mi): avg={avg_mi:.3f} | median={med_mi:.3f} | min={min_mi:.3f} | max={max_mi:.3f}")
+            print(f"{table} pickup range: {first_ts} → {last_ts}")
+            log.info(f"{table} rows={rows:,} avg_pax={avg_pax:.2f} med_pax={med_pax:.2f} avg_mi={avg_mi:.3f}")
         except Exception as e:
+            log.warning(f"Could not compute stats for {table}: {e}")
             print(f"Could not compute stats for {table}: {e}")
-            log.warning("Could not compute stats for %s: %s", table, e)
 
-
-# ------------------ main ------------------
+# ---------------- main ----------------
+# Orchestrate the end-to-end flow: prep folders, download, load CSV, build tables, insert trips, print stats
 def main() -> None:
-    """End-to-end: ensure folders, download all years, load emissions, create tables, insert normalized rows, print counts+stats."""
     ensure_dirs()
 
     if not VEHICLE_EMISSIONS_CSV.exists():
-        raise FileNotFoundError(
-            f"Missing {VEHICLE_EMISSIONS_CSV}. Place vehicle_emissions.csv under ./data/"
-        )
+        raise FileNotFoundError(f"Missing {VEHICLE_EMISSIONS_CSV}. Put vehicle_emissions.csv under ./data/")
 
-    # Download all months for all years/types (skips missing with warnings)
-    for t in ("yellow", "green"):
+    # Download (skip if already present)
+    for taxi_type in ("yellow", "green"):
         for y in YEARS:
             for m in MONTHS:
-                url, dest = url_and_dest(t, y, m)
-                ok = download_with_retries(url, dest)
-                if not ok:
-                    # Not fatal — older years occasionally lack some months/files
-                    log.warning(f"Could not obtain {dest.name} — continuing.")
+                url, dest = url_and_dest(taxi_type, y, m)
+                download_with_retries(url, dest)
 
     con = duckdb.connect(str(DB_PATH), read_only=False)
-
     load_vehicle_emissions(con)
     create_raw_tables(con)
     insert_trips(con, "yellow")
     insert_trips(con, "green")
-
-    # Print richer stats (replaces the old count-only printout)
     print_raw_stats(con)
-
     con.close()
     log.info("Load complete.")
-
 
 if __name__ == "__main__":
     main()
